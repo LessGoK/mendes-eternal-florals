@@ -1,0 +1,333 @@
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f7f6f4;
+  padding-top: 69px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+nav {
+  background: #fff;
+  border: 2px solid #886e87;
+  padding: 0 40px;
+  margin: 0 20px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Jost", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 26px;
+  letter-spacing: 0.08em;
+  color: #5a465a;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #5a465a;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #886e87;
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: #886e87;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.cta-btn {
+  font-family: "Jost", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f0efeb;
+  background: #886e87;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 22px;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.cta-btn:hover {
+  background: #f0efeb;
+  color: #886e87;
+  border: 2px solid #886e87;
+}
+
+.row-title {
+  margin-top: 50px;
+  scroll-margin-top: 90px;
+}
+
+.row-title h2 {
+  letter-spacing: 0.12em;
+  text-align: center;
+  display: inline-block;
+  font-size: 1.7rem;
+  margin: 0;
+  opacity: 0.9;
+  font-weight: 500;
+  color: #5a465a;
+}
+
+.row-title hr {
+  display: inline-block;
+  width: 10%;
+  border: none;
+  height: 2px;
+  background-color: #5a465a;
+  vertical-align: middle;
+}
+
+.admin-section h2 {
+  font-family: "Lobster Two", cursive;
+}
+
+/* ===== LAYOUT ===== */
+.admin-container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+
+.admin-section {
+  flex: 1;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  scroll-margin-top: 80px;
+}
+
+#paymentSection {
+  margin-bottom: 50px;
+}
+
+.admin-section h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* ===== INPUTS ===== */
+.admin-section input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.admin-section input:focus {
+  border-color: #a78fa8;
+}
+
+/* ===== BUTTONS ===== */
+.admin-section button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 8px;
+  background: #5a465a;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.admin-section button:hover {
+  background: #7a5c7a;
+}
+
+/* ===== CARDS ===== */
+.card {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #cbc1cc;
+  text-align: center;
+  border: 1px solid #5a465a;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 calc(20% - 16px); /* 👈 THIS is what limits to 5 cards */
+  min-width: calc(20% - 16px);
+}
+
+.card-inner {
+  padding: 10px;
+}
+
+.imgBox img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  padding-top: 20px;
+}
+
+.items-container img {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+}
+
+.items-container .card button {
+  width: 200px;
+  display: block;
+  margin: 5px auto;
+}
+
+.items-container {
+  display: flex;
+  gap: 50px;
+  overflow-x: auto;
+}
+
+.items-container:-webkit-scrollbar {
+  display: none;
+}
+/* ===== CARD CONTENT ===== */
+.content {
+  padding: 10px;
+}
+
+.content h3 {
+  margin: 0;
+}
+
+.content p {
+  font-size: 14px;
+  color: #555;
+}
+
+.content li {
+  list-style: none;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+/* ===== ADMIN BUTTONS ===== */
+.content button {
+  width: 48%;
+  margin: 5px 1%;
+  padding: 6px;
+  font-size: 14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .admin-container {
+    flex-direction: column;
+  }
+}
+
+/* =========================
+   CONTACTS ADMIN SECTION
+   (matches your existing theme)
+   ========================= */
+
+#contacts-section {
+  background: #ffffff;
+  padding: 30px 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin: 50px 0;
+}
+
+#contacts-section h2 {
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: "Lobster Two", cursive;
+}
+
+#contacts-section input:focus {
+  border-color: #a78fa8;
+}
+
+.contact-row {
+  display: block;
+  margin: 0 auto;
+}
+
+.contact-row input {
+  width: 50%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.contact-row button {
+  width: 100px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  background: #5a465a;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.contact-row button:hover {
+  background: #7a5c7a;
+}

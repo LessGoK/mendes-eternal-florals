@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="order.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <title>Order Bouquet</title>
+  </head>
+  <body>
+    <section class="step active" id="step1">
+      <h2>Design Your Bouquet</h2>
+
+      <!-- 🌹 ROSE COUNT -->
+      <div class="form-group">
+        <label class="roses-label"
+          >Number of Roses
+          <span class="required-hint hidden"
+            >* please choose number of roses</span
+          >
+        </label>
+        <label class="instruction"
+          >Please select the number of flowers for your boutueq</label
+        >
+
+        <div class="options" id="roseOptions"></div>
+      </div>
+
+      <!--  COLOR (WITH IMAGES) -->
+      <div class="form-group">
+        <label class="color-label"
+          >Rose Colour
+          <span class="required-hint hidden">* please choose roses color</span>
+        </label>
+        <label class="instruction"
+          >Please select the color you want for the flowers</label
+        >
+
+        <div class="image-options" id="roseColors"></div>
+      </div>
+
+      <!--  WRAPPER -->
+      <div class="form-group">
+        <label class="wrapper-label"
+          >Wrapper Colour
+          <span class="required-hint hidden"
+            >* please choose a wrapper for your boutueq</span
+          >
+        </label>
+        <label class="instruction"
+          >Please select the color you want for the flowers</label
+        >
+        <div class="image-options" id="wrapperColors"></div>
+      </div>
+
+      <!--  ADD-ONS -->
+      <div class="form-group">
+        <label>Add-ons</label>
+        <label class="instruction"
+          >Please select the color you want for the flowers</label
+        >
+
+        <div class="image-options add-ons" id="addonList"></div>
+      </div>
+
+      <!--additional info-->
+      <div class="form-group" id="additionalsSection">
+        <label class="wrapper-label">Additional Info</label>
+
+        <label class="instruction" id="occation-instruction">
+          What is the <strong>Occation for this bouquet:</strong>
+        </label>
+        <input
+          type="text"
+          id="occation"
+          placeholder="e.g: Birthday, Graduation, Anniversary, ..."
+        />
+
+        <label class="instruction">
+          If you selected <strong>Multi-color</strong> in add-ons, pick up to 2
+          colors:
+        </label>
+        <div class="image-options" id="multiColors"></div>
+
+        <br />
+
+        <label class="instruction">
+          If you selected <strong>Bow</strong> in add-ons, pick a bow color:
+        </label>
+        <div class="image-options" id="bowColors"></div>
+      </div>
+
+      <div class="buttons">
+        <button type="button" onclick="nextStep()">Next</button>
+      </div>
+    </section>
+
+    <section class="step" id="step2">
+      <!-- Customer details -->
+      <div class="form-group">
+        <label>Customer Details</label>
+        <label class="instruction">Enter your delivery information</label>
+
+        <div class="details-grid">
+          <input id="fullname" type="text" placeholder="Full Name" required />
+          <input type="email" placeholder="Email Address" />
+          <input id="phone" type="tel" placeholder="Phone Number" />
+          <input
+            id="whatsapp"
+            type="tel"
+            placeholder="WhatsApp Number"
+            required
+          />
+
+          <div class="address-group">
+            <label>Delivery Address</label>
+
+            <div class="address-options">
+              <label>
+                <input type="radio" name="address" value="uj_apk" />
+                UJ APK (Free delivery)
+              </label>
+
+              <label
+                ><input type="radio" name="address" value="uj_apb" /> UJ APB
+                (Free delivery)</label
+              >
+              <label
+                ><input type="radio" name="address" value="uj_dfc" /> UJ DFC
+                (Free delivery)</label
+              >
+              <label
+                ><input type="radio" name="address" value="uj_soweto" /> UJ
+                Soweto (Free delivery)</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="address"
+                  value="other"
+                  id="otherAddress"
+                />
+                Other
+                <small class="delivery-warning"> (Delivery fee applies)</small>
+              </label>
+            </div>
+
+            <input
+              type="text"
+              id="customAddress"
+              class="hidden"
+              placeholder="Enter full delivery address"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="buttons">
+        <button type="button" onclick="nextStep()">Next</button>
+      </div>
+    </section>
+
+    <section class="step" id="step3">
+      <!-- Policies -->
+      <div class="form-group">
+        <label>Terms & Policies</label>
+        <label class="instruction">
+          Please read and agree before placing your order
+        </label>
+
+        <div class="policy-box">
+          <h4>📌 Order Policy</h4>
+          <p>
+            • All orders must be placed at least 7–10 business days in advance.
+          </p>
+
+          <h4>💳 Payment Terms</h4>
+          <p>• Payment is required on or before delivery/pickup day.</p>
+          <p>• Only EFT (Electronic Funds Transfer) is accepted.</p>
+          <p>• Orders are only confirmed once proof of payment is received.</p>
+          <p>• If payment is not received, the order will not be released.</p>
+
+          <h4>📅 Reservations (Pay Later)</h4>
+          <p>• You may reserve a bouquet without immediate payment.</p>
+          <p>• Reservations are valid for 14 days only.</p>
+          <p>• Unpaid reservations will be automatically cancelled.</p>
+
+          <h4>❌ Cancellations & Refunds</h4>
+          <p>• Cancellation before work starts: No penalty (if unpaid).</p>
+          <p>• Cancellation after work starts: 50% charge applies.</p>
+        </div>
+
+        <label class="agree-box">
+          <input type="checkbox" id="agreeTerms" />
+          I agree to the terms and conditions
+        </label>
+
+        <span class="required-hint hidden" id="agreeError">
+          * You must agree before continuing
+        </span>
+
+        <div class="buttons">
+          <button type="button" onclick="placeOrder()">Place Order</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="live-calculator">
+      <h3>🛒 Live Breakdown</h3>
+
+      <div id="breakdown"></div>
+
+      <hr />
+
+      <strong>Total: R <span id="total">0</span></strong>
+    </div>
+    <script src="temp.js"></script>
+
+    <div id="orderModal" class="modal hidden">
+      <div class="modal-content">
+        <h2>🎉 Order Received!</h2>
+
+        <p>
+          Thank you for your order! We’ll contact you via
+          <strong>email and WhatsApp</strong> to confirm your order.
+        </p>
+
+        <p>
+          💳 <strong>Payment Instructions:</strong><br />
+          Please make payment using one of the methods below:
+        </p>
+
+        <div class="payment-box">
+          <!--DYNAMIC PAYMENT METHODS -->
+          <div id="paymentMethodsContainer"></div>
+
+          <p><strong>Reference:</strong> Your Name</p>
+        </div>
+
+        <button onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="order.js"></script>
+</html>

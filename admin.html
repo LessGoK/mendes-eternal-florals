@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="admin.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+      admin.html
+    />
+    <title>Admin Dashboard</title>
+  </head>
+
+  <body>
+    <nav>
+      <a href="#" class="logo">ADMIN</a>
+      <ul class="nav-links">
+        <li><a href="#bouquet-form">Bouquets</a></li>
+        <li><a href="#addon-form">Add ons</a></li>
+        <li><a href="#sizes">Sizes</a></li>
+        <li><a href="#colors">Colors</a></li>
+        <li><a href="#wrappers-designs">Wrappers</a></li>
+        <li><a href="#contacts-section">Contact</a></li>
+        <li><a href="#paymentSection">Payment Details</a></li>
+      </ul>
+      <a href="#" class="cta-btn" id="logoutBtn">Sign Out</a>
+    </nav>
+
+    <h1>Products Admin</h1>
+
+    <div class="admin-container">
+      <!-- BOUQUETS SIDE -->
+      <div class="admin-section" id="bouquet-form">
+        <h2>Bouquets</h2>
+
+        <input id="name-bouquet" placeholder="Bouquet name" />
+        <input id="price-bouquet" placeholder="Price" />
+        <input id="description-bouquet" placeholder="Description" />
+        <input type="file" id="image-bouquet-file" />
+
+        <button id="addBouquetBtn">Add Bouquet</button>
+
+        <div id="bouquets"></div>
+      </div>
+
+      <!-- ADD-ONS SIDE -->
+      <div class="admin-section" id="addon-form">
+        <h2>Add-ons</h2>
+
+        <input id="name-addon" placeholder="Add-on name" />
+        <input id="price-addon" placeholder="Price" />
+        <input id="description-addon" placeholder="Description" />
+        <input type="file" id="image-addon-file" />
+
+        <button id="addAddonBtn">Add Add-on</button>
+
+        <div id="addons"></div>
+      </div>
+    </div>
+
+    <!-- 🌹 BOUQUET BUILDER SETTINGS -->
+    <div class="admin-section" id="bouquet-settings">
+      <h2>Bouquet Options</h2>
+
+      <!-- ===================== ROSE SIZES ===================== -->
+      <div class="row-title" id="sizes">
+        <hr />
+        <h2>Bouquet Sizes</h2>
+        <hr />
+      </div>
+      <input id="rose-size" placeholder="e.g. 5,10,20,30" />
+      <input id="rose-price" placeholder="Price for size (R)" />
+      <button id="addRoseSizeBtn">Add Rose Size</button>
+
+      <div id="rose-sizes" class="items-container"></div>
+
+      <!-- ===================== ROSE COLORS ===================== -->
+
+      <div class="row-title" id="colors">
+        <hr />
+        <h2>Rose Colors</h2>
+        <hr />
+      </div>
+
+      <input id="rose-color-name" placeholder="Color name (e.g. Red)" />
+      <input type="file" id="rose-color-image" />
+
+      <button id="addRoseColorBtn">Add Rose Color</button>
+
+      <div id="rose-colors" class="items-container"></div>
+
+      <!-- ===================== WRAPPERS ===================== -->
+
+      <div class="row-title" id="wrappers-designs">
+        <hr />
+        <h2>Wrapper Designs</h2>
+        <hr />
+      </div>
+
+      <input id="wrapper-name" placeholder="Wrapper color name" />
+      <input type="file" id="wrapper-image" />
+
+      <button id="addWrapperBtn">Add Wrapper</button>
+
+      <div id="wrappers" class="items-container"></div>
+
+      <!--**************************add ons****************************-->
+      <h3>Add-ons</h3>
+      <p>Managed in the Add-ons section above</p>
+    </div>
+
+    <!--**************************Contacts****************************-->
+    <div class="admin-section" id="contacts-section">
+      <h2>Contacts Admin</h2>
+
+      <div class="contact-row">
+        <input id="email" placeholder="Email" />
+        <button data-field="email">Update</button>
+      </div>
+
+      <div class="contact-row">
+        <input id="phone1" placeholder="Phone 1" />
+        <button data-field="phone1">Update</button>
+      </div>
+
+      <div class="contact-row">
+        <input id="phone2" placeholder="Phone 2" />
+        <button data-field="phone2">Update</button>
+      </div>
+
+      <div class="contact-row">
+        <input id="address" placeholder="Address" />
+        <button data-field="address">Update</button>
+      </div>
+
+      <div class="contact-row">
+        <input id="province" placeholder="Province" />
+        <button data-field="province">Update</button>
+      </div>
+
+      <div class="contact-row">
+        <input id="postal" placeholder="Postal Code" />
+        <button data-field="postalCode">Update</button>
+      </div>
+
+      <div class="contact-row">
+        <input id="facebook" placeholder="Facebook link" />
+        <button data-field="facebook">Update</button>
+      </div>
+
+      <div class="contact-row">
+        <input id="instagram" placeholder="Instagram link" />
+        <button data-field="instagram">Update</button>
+      </div>
+
+      <div class="contact-row">
+        <input id="whatsapp" placeholder="WhatsApp link" />
+        <button data-field="whatsapp">Update</button>
+      </div>
+
+      <div class="contact-row">
+        <input id="tiktok" placeholder="Tiktok link" />
+        <button data-field="tiktok">Update</button>
+      </div>
+    </div>
+
+    <!--Payments-->
+    <div class="admin-section" id="paymentSection">
+      <h2>💳 Payment Methods</h2>
+
+      <input id="payment-name" placeholder="Method name (e.g. PayShap)" />
+      <input id="payment-value" placeholder="Account / Number" />
+
+      <button id="addPaymentBtn">Add Payment Method</button>
+
+      <div id="payment-list" class="items-container"></div>
+    </div>
+    <script type="module" src="./admin.js"></script>
+  </body>
+</html>
