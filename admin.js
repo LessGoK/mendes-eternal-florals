@@ -22,19 +22,11 @@ import {
 const get = (id) => document.getElementById(id);
 
 document.addEventListener("DOMContentLoaded", () => {
-  // ===============================
   // COLLECTIONS
-  // ===============================
   const bouquetsColRef = collection(db, "products");
   const addonsColRef = collection(db, "addons");
 
-  // ===============================
-  // HELPER
-  // ===============================
-
-  // ===============================
   // INPUTS
-  // ===============================
   const bouquetInputs = {
     name: get("name-bouquet"),
     price: get("price-bouquet"),
@@ -49,24 +41,17 @@ document.addEventListener("DOMContentLoaded", () => {
     description: get("description-addon"),
   };
 
-  // ===============================
   // DOM
-  // ===============================
   const bouquetsDiv = get("bouquets");
   const addonsDiv = get("addons");
-
   const addBouquetBtn = get("addBouquetBtn");
   const addAddonBtn = get("addAddonBtn");
 
-  // ===============================
   // EDIT STATE
-  // ===============================
   let editingBouquetId = null;
   let editingAddonId = null;
 
-  // ===============================
   // CLOUDINARY UPLOAD
-  // ===============================
   async function uploadImage(file) {
     try {
       const formData = new FormData();
@@ -92,9 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // ===============================
   // SAVE FUNCTION
-  // ===============================
   async function handleSave(inputs, type, editingId, setEditingId, button) {
     try {
       const name = inputs.name.value.trim();
@@ -155,9 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // ===============================
   // BUTTON EVENTS
-  // ===============================
   addBouquetBtn?.addEventListener("click", () =>
     handleSave(
       bouquetInputs,
@@ -178,9 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ),
   );
 
-  // ===============================
   // LOAD PRODUCTS
-  // ===============================
   async function loadProducts() {
     bouquetsDiv.innerHTML = "";
     addonsDiv.innerHTML = "";
@@ -197,9 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
     aSnap.forEach((d) => renderCard(d, "addon"));
   }
 
-  // ===============================
   // RENDER CARD
-  // ===============================
   function renderCard(docItem, type) {
     const p = docItem.data();
     const container = type === "addon" ? addonsDiv : bouquetsDiv;
@@ -255,9 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // INIT
   loadProducts();
 
-  // ===============================
-  // CONTACTS
-  // ===============================
+  // *****************************CONTACT DETAILS *******************************
   const contactRef = doc(db, "footer", "main");
 
   const inputs = {
@@ -328,9 +303,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   loadContacts();
 
-  // ===============================
-  // 🌹 ROSE SIZES (CRUD)
-  // ===============================
+  //**************************** order.html PAGE DYNAMIC ITEMS*********************************************
+
+  // ROSE SIZES
   let editingRoseSizeId = null;
 
   get("addRoseSizeBtn")?.addEventListener("click", async () => {
@@ -393,9 +368,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadRoseSizes();
   };
 
-  // ===============================
-  // 🎨 ROSE COLORS (CRUD + CLOUDINARY)
-  // ===============================
+  // ROSE COLORS
   let editingRoseColorId = null;
 
   get("addRoseColorBtn")?.addEventListener("click", async () => {
@@ -461,9 +434,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadRoseColors();
   };
 
-  // ===============================
-  // 🎁 WRAPPER COLORS (CRUD + CLOUDINARY)
-  // ===============================
+  //  WRAPPER COLORS
   let editingWrapperId = null;
 
   get("addWrapperBtn")?.addEventListener("click", async () => {
@@ -529,16 +500,13 @@ document.addEventListener("DOMContentLoaded", () => {
     loadWrappers();
   };
 
-  // ===============================
-  // 🚀 FINAL INIT
-  // ===============================
+  // FINAL INIT
+
   loadRoseSizes();
   loadRoseColors();
   loadWrappers();
 
-  // ===============================
-  // 💳 PAYMENT METHODS (CRUD)
-  // ===============================
+  // PAYMENT METHODS
   const paymentList = get("payment-list");
   const paymentName = get("payment-name");
   const paymentValue = get("payment-value");
@@ -610,17 +578,13 @@ document.addEventListener("DOMContentLoaded", () => {
     loadPayments();
   };
 
-  // INIT
-  // ===============================
   // AUTH CONTROL
-  // ===============================
-
   const auth = getAuth();
   const logoutBtn = document.getElementById("logoutBtn");
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      loadProducts(); // ✅ only runs when logged in
+      loadProducts(); //  only runs when logged in
     } else {
       window.location.href = "admin-login.html";
     }

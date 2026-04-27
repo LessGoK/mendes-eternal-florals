@@ -141,7 +141,6 @@ nav {
   font-family: "Lobster Two", cursive;
 }
 
-/* ===== LAYOUT ===== */
 .admin-container {
   display: flex;
   gap: 30px;
@@ -167,7 +166,6 @@ nav {
   text-align: center;
 }
 
-/* ===== INPUTS ===== */
 .admin-section input {
   width: 100%;
   margin-bottom: 10px;
@@ -181,7 +179,6 @@ nav {
   border-color: #a78fa8;
 }
 
-/* ===== BUTTONS ===== */
 .admin-section button {
   width: 100%;
   padding: 10px;
@@ -198,7 +195,6 @@ nav {
   background: #7a5c7a;
 }
 
-/* ===== CARDS ===== */
 .card {
   padding: 10px 20px;
   margin-bottom: 20px;
@@ -209,7 +205,7 @@ nav {
   border: 1px solid #5a465a;
   display: flex;
   flex-direction: column;
-  flex: 0 0 calc(20% - 16px); /* 👈 THIS is what limits to 5 cards */
+  flex: 0 0 calc(20% - 16px);
   min-width: calc(20% - 16px);
 }
 
@@ -246,7 +242,7 @@ nav {
 .items-container:-webkit-scrollbar {
   display: none;
 }
-/* ===== CARD CONTENT ===== */
+
 .content {
   padding: 10px;
 }
@@ -266,25 +262,12 @@ nav {
   margin: 8px 0;
 }
 
-/* ===== ADMIN BUTTONS ===== */
 .content button {
   width: 48%;
   margin: 5px 1%;
   padding: 6px;
   font-size: 14px;
 }
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-  .admin-container {
-    flex-direction: column;
-  }
-}
-
-/* =========================
-   CONTACTS ADMIN SECTION
-   (matches your existing theme)
-   ========================= */
 
 #contacts-section {
   background: #ffffff;

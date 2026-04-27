@@ -989,7 +989,7 @@ footer hr {
   cursor: pointer;
 }
 
-/* ===== SCROLL ANIMATION BASE ===== */
+/**************************** SCROLL ANIMATION BASE ************************/
 .hidden {
   opacity: 0;
   transform: translateY(60px);
@@ -1001,7 +1001,7 @@ footer hr {
   transform: translateY(0) !important;
 }
 
-/* ===== VARIATIONS ===== */
+/*VARIATIONS */
 .fade-left {
   transform: translateX(-80px);
 }
@@ -1061,9 +1061,7 @@ footer hr {
   transition-delay: 0.6s;
 }
 
-/* ============================================================
-   HAMBURGER MENU (hidden by default, shown on mobile/tablet)
-   ============================================================ */
+/* HAMBURGER MENU (hidden by default, shown on mobile/tablet)*/
 .hamburger {
   display: none;
   flex-direction: column;
@@ -1096,9 +1094,7 @@ footer hr {
   display: block;
 }
 
-/* ============================================================
-   MOBILE — 320px to 480px
-   ============================================================ */
+/************************************** MOBILE — 320px to 480px****************************************/
 @media (max-width: 480px) {
   html,
   body {
@@ -1106,7 +1102,7 @@ footer hr {
     padding: 0;
   }
 
-  /* --- NAV --- */
+  /* NAV */
   body {
     padding-top: 60px;
   }
@@ -1156,7 +1152,7 @@ footer hr {
     display: none;
   }
 
-  /* --- HOME --- */
+  /* HOME  */
   .home {
     position: relative;
     min-height: 40vh;
@@ -1195,7 +1191,7 @@ footer hr {
     width: 100%;
     padding: 2rem 1.5rem;
     height: auto;
-    background: transparent; /* IMPORTANT */
+    background: transparent;
   }
 
   .home-image {
@@ -1226,7 +1222,7 @@ footer hr {
     font-size: 0.9rem;
   }
 
-  /* --- FEATURES --- */
+  /* FEATURES */
   .features {
     padding: 5px 10px;
   }
@@ -1287,7 +1283,7 @@ footer hr {
     margin: 0;
   }
 
-  /* --- ABOUT --- */
+  /* ABOUT */
   .about {
     height: auto;
     padding: 0px 20px 15px;
@@ -1368,7 +1364,7 @@ footer hr {
     text-align: center;
   }
 
-  /* --- PROCESS --- */
+  /* PROCESS */
   .process {
     padding: 30px 16px;
   }
@@ -1408,7 +1404,7 @@ footer hr {
     font-size: 1rem;
   }
 
-  /* --- FAQ --- */
+  /* FAQ */
   .faq {
     padding: 0px 0;
   }
@@ -1450,7 +1446,7 @@ footer hr {
     padding-left: 16px;
   }
 
-  /* --- CONTACT --- */
+  /* CONTACT */
   .contact {
     width: 95%;
     margin: 0px auto;
@@ -1478,7 +1474,7 @@ footer hr {
     align-items: center;
   }
 
-  /* --- CONTACT IMAGE --- */
+  /*CONTACT IMAGE */
   .contact-image-container {
     width: 100%;
     margin: 16px auto;
@@ -1508,7 +1504,7 @@ footer hr {
     font-size: 0.9rem;
   }
 
-  /* --- FOOTER --- */
+  /* FOOTER */
   footer {
     padding: 10px 0px;
   }
@@ -1545,7 +1541,7 @@ footer hr {
     text-align: center;
   }
 
-  /* --- MODAL --- */
+  /* MODAL*/
   .modal-content {
     margin: 20% auto;
     padding: 20px;
@@ -1560,11 +1556,9 @@ footer hr {
   }
 }
 
-/* ============================================================
-   SMALL TABLETS — 481px to 768px
-   ============================================================ */
+/************************************************ SMALL TABLETS — 481px to 768px *****************************************/
 @media (min-width: 481px) and (max-width: 1024px) {
-  /* --- NAV --- */
+  /* NAV */
   body {
     padding-top: 64px;
   }
@@ -1614,7 +1608,7 @@ footer hr {
     display: none;
   }
 
-  /* --- HOME --- */
+  /* HOME */
   .home {
     position: relative;
     min-height: 60vh;
@@ -1652,7 +1646,7 @@ footer hr {
     width: 100%;
     padding: 2rem 1.5rem;
     height: auto;
-    background: transparent; /* IMPORTANT */
+    background: transparent;
   }
 
   .home-image {
@@ -1682,8 +1676,7 @@ footer hr {
     margin: 24px auto;
   }
 
-  /* --- FEATURES --- */
-  /* --- NAV --- */
+  /* NAV */
   body {
     padding-top: 60px;
   }
@@ -1787,7 +1780,7 @@ footer hr {
     margin-bottom: 4px;
   }
 
-  /* --- ABOUT --- */
+  /* ABOUT */
   .about {
     height: auto;
     padding: 30px 24px 0px;
@@ -1878,7 +1871,7 @@ footer hr {
     text-align: center;
   }
 
-  /* --- PROCESS --- */
+  /* PROCESS */
   .process {
     padding: 30px 20px;
   }
@@ -1906,7 +1899,7 @@ footer hr {
     font-size: 1.05rem;
   }
 
-  /* --- FAQ --- */
+  /* FAQ  */
   .faq h2 {
     font-size: 2.2rem;
     margin-bottom: 28px;
@@ -1930,7 +1923,7 @@ footer hr {
     font-size: 1.6rem;
   }
 
-  /* --- CONTACT --- */
+  /* CONTACT */
   .contact {
     width: 95%;
     margin: 36px auto;
@@ -1954,7 +1947,7 @@ footer hr {
     font-size: 1.1rem;
   }
 
-  /* --- CONTACT IMAGE --- */
+  /* CONTACT IMAGE */
   .contact-image-container {
     width: 100%;
     margin: 16px auto;
@@ -1984,7 +1977,7 @@ footer hr {
     font-size: 1rem;
   }
 
-  /* --- FOOTER --- */
+  /*  FOOTER */
   .footer-container {
     flex-direction: column;
     gap: 28px;

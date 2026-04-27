@@ -236,6 +236,11 @@ label {
   opacity: 0.88;
 }
 
+#occation {
+  padding: 10px 10px;
+  min-width: 500px;
+}
+
 .hidden {
   display: none;
 }

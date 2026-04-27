@@ -15,10 +15,10 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// 🔐 Auth + 🗄️ Database (THIS is what you actually need)
+// Auth + Database
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 
-// optional: expose for testing in console
+// expose for testing in console
 window.auth = auth;
 window.db = db;
