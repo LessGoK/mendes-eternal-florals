@@ -114,7 +114,9 @@ nav {
 }
 
 /******************************** HOME section ****************************************/
-
+.home {
+  width: 95%;
+}
 .home h1 {
   font-size: 5rem;
   margin-bottom: 0;

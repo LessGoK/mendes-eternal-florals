@@ -2,10 +2,18 @@
    BASE STYLES (Desktop First)
    ============================================= */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   padding: 1rem 10rem;
   background: #f0efeb;
   max-width: 900px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 body h2 {
@@ -206,7 +214,8 @@ label {
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   height: 50px;
   padding: 5px 15px;
   overflow: hidden;
@@ -465,6 +474,12 @@ input.error {
 #occation-instruction {
   padding: 0;
   margin-top: 10px;
+}
+
+#occation {
+  width: 100%;
+  min-width: 0;
+  max-width: 500px;
 }
 
 /* =============================================
